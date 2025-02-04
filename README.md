@@ -7,7 +7,7 @@ This is the project for car plate OCR recognition, which include:
 4. Additional example how to use API service in Telegram bot
 
 A decentralized parking app that automatically pays for parking using geolocation and plate recognition was created 
-using an API service. The app was developed during the TON x ETH Belgrade hackathon. For more information, 
+using [the API service](https://github.com/DimYun/car-plate_service). The app was developed during the TON x ETH Belgrade hackathon. For more information, 
 check out [the project's presentation](presentation.pdf).
 
 Used technologies:
