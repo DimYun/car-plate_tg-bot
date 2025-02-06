@@ -14,7 +14,7 @@ from aiogram.fsm.context import FSMContext
 from aiogram.filters import StateFilter
 from aiogram.types import Message, CallbackQuery, ReplyKeyboardRemove, BufferedInputFile
 
-from config import BOT_TOKEN
+from config import BOT_TOKEN, API_URL
 from keyboards import kb_location, kb_location_result, kb_payment
 from states import MenuSG
 
@@ -25,11 +25,14 @@ dp = Dispatcher(storage=storage)
 
 @dp.message(Command("start"))
 async def handler_start(message: Message, state: FSMContext) -> None:
+    start_msg = (
+        'Hi! I am "remember my car" bot, ' +
+        'please sent me a photo of your car. It should contain ' +
+        'car plate number!'
+    )
     await state.set_state(MenuSG.photo_and_location)
     await message.answer(
-        text=('Hi! I am "remember my car" bot, '
-              'please sent me a photo of your car. It should contain '
-              'car plate number!')
+        text=start_msg,
     )
 
 
