@@ -6,11 +6,11 @@ USERNAME := dmitriy
 
 .PHONY: install
 install:
-	pip install -r requirements.txt
+	pip3 install -r requirements.txt
 
 .PHONY: run_app
 run_app:
-	PYTHONPATH=. python main.py
+	PYTHONPATH=. python3 main.py
 
 .PHONY: lint
 lint:
