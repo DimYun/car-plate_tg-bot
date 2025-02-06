@@ -14,8 +14,7 @@ run_app:
 
 .PHONY: lint
 lint:
-	PYTHONPATH=. tox .
-	PYTHONPATH=. isort .
+	PYTHONPATH=. tox
 
 .PHONY: build
 build:
