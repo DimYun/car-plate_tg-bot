@@ -8,7 +8,7 @@ This is the project for car plate OCR recognition, which include:
 
 A decentralized parking app that automatically pays for parking using geolocation and plate recognition was created 
 using [the API service](https://github.com/DimYun/car-plate_service). The app was developed during the TON x ETH Belgrade hackathon. For more information, 
-check out [the project's presentation](presentation.pdf).
+check out [the project's presentation](presentation.pdf) and [tg bot](https://t.me/test_parking_bot).
 
 Used technologies:
 
@@ -49,3 +49,9 @@ Next, install dependencies:
 
 #### Static analyse
 * `make lint` - run linters
+
+#### Build docker
+* `make build` - you can define arguments `DOCKER_TAG`, `DOCKER_IMAGE`
+
+#### Run app in docker
+* `make docker_run` - you can define arguments `DOCKER_NAME`, `DOCKER_TAG`, `DOCKER_IMAGE`

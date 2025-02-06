@@ -1,7 +1,7 @@
 DEPLOY_HOST := 93.123.95.160
 DOCKER_TAG := latest
-DOCKER_IMAGE := plates-tg
-DOCKER_NAME := car-plates-tg
+DOCKER_IMAGE := car_plates_tg
+DOCKER_NAME := car_plates_tg
 USERNAME := dmitriy
 
 .PHONY: install
