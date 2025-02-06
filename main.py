@@ -14,7 +14,7 @@ from aiogram.fsm.context import FSMContext
 from aiogram.filters import StateFilter
 from aiogram.types import Message, CallbackQuery, ReplyKeyboardRemove, BufferedInputFile
 
-from config import BOT_TOKEN, API_URL
+from config import BOT_TOKEN
 from keyboards import kb_location, kb_location_result, kb_payment
 from states import MenuSG
 
@@ -26,7 +26,11 @@ dp = Dispatcher(storage=storage)
 @dp.message(Command("start"))
 async def handler_start(message: Message, state: FSMContext) -> None:
     await state.set_state(MenuSG.photo_and_location)
-    await message.answer(text='Hi! I am "remember my car" bot, please sent me a photo of your car')
+    await message.answer(
+        text=('Hi! I am "remember my car" bot, '
+              'please sent me a photo of your car. It should contain '
+              'car plate number!')
+    )
 
 
 @dp.message(StateFilter(MenuSG.photo_and_location), F.photo)
@@ -62,9 +66,11 @@ def get_plate(im_bytes: bytes, im_name: str) -> tuple:
     files = {
         'image': (f'{im_name}.jpg', im_bytes),
     }
+    print(API_URL)
     response = requests.post(
         API_URL,
-        files=files
+        files=files,
+        verify=False
     )
 
     plate_number = 'Not Process'
